@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c86c886a-4d8a-4e20-8f69-12799c86cb10" name="Changes" comment="Commit 20/12">
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+    <list default="true" id="c86c886a-4d8a-4e20-8f69-12799c86cb10" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/psp/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/psp/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/psp/LogicaJuego.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/psp/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/psp/Servidor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +19,19 @@
       <list>
         <option value="Class" />
       </list>
+    </option>
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="4a5178a5-ca80-4e11-864d-caa12a6df34d" />
+        <option name="url" value="https://github.com/JuanValeraDAM/PSP-JuegoEnRed.git" />
+      </UrlAndAccount>
     </option>
   </component>
   <component name="MarkdownSettingsMigration">
@@ -44,7 +55,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Juan/Desktop/2 DAM Windows/PSP/Tema 3/PSP-JuegoEnRed-Juan"
+    "last_opened_file_path": "C:/Users/Juan/Desktop/2 DAM Windows/PSP/Tema 3/PSP-JuegoEnRed-Juan",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
 }]]></component>
   <component name="RunManager" selected="Application.Cliente">
@@ -97,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671538097134</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Commit 22/12">
+      <created>1671732785594</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1671732785594</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -113,6 +132,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit 20/12" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit 20/12" />
+    <MESSAGE value="Commit 22/12" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit 22/12" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

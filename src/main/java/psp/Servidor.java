@@ -15,20 +15,20 @@ public class Servidor {
     /*
     Crea un programa Java que implemente un juego en red para dos o más jugadores.
     Cada jugador se conectará al servidor y entonces empezará el juego.
-     El servidor pedirá al inicio por teclado cuántos jugadores va a haber, y
-     entonces deberá esperar a que estén todos conectados para empezar la partida.
+    El servidor pedirá al inicio por teclado cuántos jugadores va a haber,
+    y entonces deberá esperar a que estén todos conectados para empezar la partida.
 
-Los jugadores tienen inicialmente cero puntos, y juegan por turno.
-Cada jugador esperará a que el servidor le indique que le toca jugar,
- y entonces el jugador (el usuario) elegirá si quiere sumar o restar.
- El servidor generará un número aleatorio entre 1 y 10, y lo enviará al jugador,
-  quien lo sumará o restará a sus puntos según hubiese elegido antes (la decisión de sumar o restar no se envía por la red).
+    Los jugadores tienen inicialmente cero puntos, y juegan por turnos.
+    Cada jugador esperará a que el servidor le indique que le toca jugar,
+    y entonces el jugador (el usuario) elegirá si quiere sumar o restar.
+    El servidor generará un número aleatorio entre 1 y 10, y lo enviará al jugador,
+    quien lo sumará o restará a sus puntos según hubiese elegido antes (la decisión de sumar o restar no se envía por la red).
 
-Si después de hacer la suma o resta los puntos se salen del rango 1..10, el jugador pierde.
- El jugador deberá comunicar al servidor si ha perdido o no, y si ha perdido, se desconectará y terminará su ejecución.
+    Si después de hacer la suma o resta los puntos se salen del rango 1..10, el jugador pierde.
+    El jugador deberá comunicar al servidor si ha perdido o no, y si ha perdido, se desconectará y terminará su ejecución.
 
-El servidor continuará dando turno a los jugadores que queden, hasta que solamente quede uno.
-Cuando sólo quede uno, le comunicará que ha ganado. Entonces el programa terminará.
+    El servidor continuará dando turno a los jugadores que queden, hasta que solamente quede uno.
+    Cuando solo quede uno, le comunicará que ha ganado. Entonces el programa terminará.
      */
     /*
     BORRADOR:
@@ -59,18 +59,24 @@ Cuando sólo quede uno, le comunicará que ha ganado. Entonces el programa termi
         }
         System.out.println("Ya se han conectado todos los jugadores, empieza el juego");
 
-        while (socketsJugadores.size() > 1) {
-            for (int i = 0; i < socketsJugadores.size(); i++) {
 
-                bufferedReader = new BufferedReader(new InputStreamReader(socketsJugadores.get(i).getInputStream()));
+        boolean continuar = true;
+        while (continuar) {
+            for (int i = 0; i < socketsJugadores.size(); i++) {
                 printWriter = new PrintWriter(socketsJugadores.get(i).getOutputStream());
                 printWriter.println(random.nextInt(1, 11));
                 printWriter.flush();
 
+                bufferedReader = new BufferedReader(new InputStreamReader(socketsJugadores.get(i).getInputStream()));
                 String respuestaDelCliente = bufferedReader.readLine();
                 if (!respuestaDelCliente.equals("OK")) {
                     socketsJugadores.get(i).close();
                     socketsJugadores.remove(i);
+                    i--; //Esto es para que no se salte un turno
+                    if (socketsJugadores.size() <= 1) {
+                        continuar=false;
+                        break;
+                    }
                 }
             }
         }
@@ -78,7 +84,5 @@ Cuando sólo quede uno, le comunicará que ha ganado. Entonces el programa termi
         printWriter.println("Has ganado");
         printWriter.flush();
         System.out.println("Se ha terminado el juego");
-
-
     }
 }
